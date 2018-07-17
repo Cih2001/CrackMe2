@@ -15,14 +15,6 @@ _main:
 	mov ebp, esp
 	sub esp, 4
 
-    mov eax, dword [fs:0]
-    mov dword [Variables + GlobalVars.SEH.next], eax
-    mov dword [Variables + GlobalVars.SEH.handler], .res
-    mov dword [fs:0], Variables + GlobalVars.SEH.next
-    mov eax, dword [fs:0]
-    mov dword [0],0
-    .res:
-
 	WRITE_MESSAGE String.EnterPassword, String.EnterPassword.Length
 
     INS_PUSH	STD_INPUT_HANDLE
